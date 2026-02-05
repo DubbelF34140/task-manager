@@ -43,6 +43,7 @@ function taskCard(task) {
   });
 
   div.querySelector('[data-role="delete"]').addEventListener("click", async () => {
+    // eslint-disable-next-line no-alert
     if (!confirm("Supprimer cette tâche ?")) return;
     await api(`/tasks/${task.id}`, { method: "DELETE" });
     await refresh();
