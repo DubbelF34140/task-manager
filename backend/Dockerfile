@@ -4,10 +4,10 @@ RUN groupadd -r appgroup && useradd -r -g appgroup -s /sbin/nologin appuser
 
 WORKDIR /app
 
-COPY requirements.txt .
+COPY --chmod=444 requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY --chown=appuser:appgroup app/ ./app/
+COPY --chown=appuser:appgroup --chmod=550 app/ ./app/
 
 USER appuser
 
