@@ -1,4 +1,7 @@
 FROM python:3.12@sha256:491834927515f4e3f360775d862e342718e27c1f9d6c1c010d19f3f4a3861234
+LABEL maintainer="Woelffle Ylan"
+LABEL description="TaskManager"
+LABEL version=1.0
 
 WORKDIR /app
 
